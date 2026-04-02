@@ -118,7 +118,7 @@ detect_gbl_vulnerability() {
     return 1
   fi
   if ! grep -q "Warning: Failed to patch ABL GBL" "$RUNTIME_DIR/patch.log"; then
-    write_log '检测到新的ABL版本，存在GBL漏洞，跳过后续BL刷写以保留BL版本'
+    write_log '检测到新的ABL版本，存在GBL漏洞，跳过后续BL刷写'
     return 0
   fi
   write_log '未检测到GBL漏洞，继续后续BL刷写'
